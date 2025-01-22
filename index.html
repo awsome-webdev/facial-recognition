@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition</title>
+    <link href="index.css" rel="stylesheet">
+    <script src="face-api.js"></script>
+</head>
+<body>
+    <center>
+        <p>Click to upload pictures the more you upload the better detection will be<p>
+        <div id="upload-div">
+            <p>Click here to select files</p>
+        <input style="margin: 5px;" type="file" class="imageUpload" accept="image/*" multiple>
+        </div>
+        <button id="Upload">Upload</button>
+    </center>
+
+    <video id="video" autoplay muted></video>
+    <div id="indicators">
+        <h3>Detected Faces:</h3>
+    <label>You:</label><progress id="true" value="0" max="1"></progress><br>
+    <label>uknown:</label><progress id="false" value="0" max="1"></progress>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
+<style>
+    #upload-div{
+        position: relative;
+        border: 2px solid black;
+        width: fit-content;
+        border-radius: 10px;
+        padding: 5px;
+    }
+    body{
+        background-color: rgb(255, 255, 255);
+    }
+    #video{
+        position: relative;
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+    #true{
+        position: relative;
+    }
+    #indicators{
+        position: absolute;
+        height: fit-content;
+        width: fit-content;
+        left: 49%;
+        top: 30vh;
+    }
+    label{
+        position: relative;
+        margin: 5px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+    button{
+        position: relative;
+        margin: 5px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        border: none;
+        background-color: blue;
+        border-radius: 5px;
+    }
+</style>
